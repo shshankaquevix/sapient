@@ -1,5 +1,10 @@
-FROM alpine
 
-COPY gcp-cd-codelab /go/bin/gcp-cd-codelab
+FROM ubuntu:14.04
+RUN apt-get update
+RUN apt-get install -y nginx
+ADD nginx.conf /etc/nginx/nginx.conf
 
-ENTRYPOINT /go/bin/gcp-cd-codelab
+ADD ./www-data /www-data
+
+EXPOSE 80
+CMD ["nginx"]
