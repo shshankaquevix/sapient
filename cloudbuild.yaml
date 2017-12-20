@@ -1,8 +1,0 @@
-steps:
-#  - name: "gcr.io/cloud-builders/go"
-#    args: ["install", "github.com/shshankaquevix/sapient/gcp-cd-codelab"]
-#    env: ["PROJECT_ROOT=github.com/shshankaquevix/sapient/gcp-cd-codelab"]
-  - name: "gcr.io/cloud-builders/docker"
-    args: ["build", "-t", "gcr.io/deep-thought-185318/nginx:$REVISION_ID", "-f", "Dockerfile", "."]
-images:
-  - "gcr.io/deep-thought-185318/nginx:$REVISION_ID"
